@@ -1,5 +1,4 @@
 import { Component, Input, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { AppService } from 'src/app/app.service';
 
 @Component({
