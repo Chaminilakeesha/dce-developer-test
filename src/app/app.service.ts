@@ -66,4 +66,14 @@ export class AppService {
       return false;
     }
   }
+
+  async deleteUser(id: number): Promise<boolean> {
+    try {
+      const httpResult = await firstValueFrom(this._http.delete(`https://reqres.in/api/users/${id}`));
+      return true;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  }
 }
