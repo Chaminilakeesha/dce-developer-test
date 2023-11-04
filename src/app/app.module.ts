@@ -7,9 +7,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { ListViewComponent } from './components/list-view/list-view.component';
 
 @NgModule({
-  declarations: [AppComponent, UserRegistrationComponent, NavBarComponent],
+  declarations: [AppComponent, UserRegistrationComponent, NavBarComponent, ListViewComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

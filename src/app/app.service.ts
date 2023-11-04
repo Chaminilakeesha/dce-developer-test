@@ -9,6 +9,22 @@ interface IRegisteredUserResponse {
   createdAt: Date;
 }
 
+export interface IUser {
+  id: number;
+  email: string;
+  first_name: string;
+  last_name: string;
+  avatar: string;
+}
+
+interface IViewAllUsers {
+  page: number;
+  per_page: number;
+  total: number;
+  total_pages: number;
+  data: IUser[];
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -25,6 +41,15 @@ export class AppService {
       console.log(error);
       return false;
     }
+  }
 
+  async viewAllUsers(page: number): Promise<IUser[]> {
+    try {
+      const httpResult = await firstValueFrom<IViewAllUsers>(this._http.get<IViewAllUsers>(`https://reqres.in/api/users?page=${page}`));
+      return httpResult.data;
+    } catch (error) {
+      console.log(error);
+      return [];
+    }
   }
 }
