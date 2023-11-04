@@ -8,10 +8,22 @@ import { AppComponent } from './app.component';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ListViewComponent } from './components/list-view/list-view.component';
+import { UpdateUserComponent } from './components/update-user/update-user.component';
 
 @NgModule({
-  declarations: [AppComponent, UserRegistrationComponent, NavBarComponent, ListViewComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    UserRegistrationComponent,
+    NavBarComponent,
+    ListViewComponent,
+    UpdateUserComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

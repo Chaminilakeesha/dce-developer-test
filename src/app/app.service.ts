@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 
-interface IRegisteredUserResponse {
+interface IRegisteredUser {
   name: string;
   job: string;
   id: string;
@@ -25,17 +25,21 @@ interface IViewAllUsers {
   data: IUser[];
 }
 
+interface IUpdatedUser {
+  name: string;
+  job: string;
+  createdAt: Date;
+}
+
 @Injectable({
   providedIn: 'root',
 })
 export class AppService {
-
-
   constructor(private _http: HttpClient) { }
 
   async registration(name: string, job: string): Promise<boolean> {
     try {
-      const httpResult = await firstValueFrom<IRegisteredUserResponse>(this._http.post<IRegisteredUserResponse>('https://reqres.in/api/users', { name, job }));
+      const httpResult = await firstValueFrom<IRegisteredUser>(this._http.post<IRegisteredUser>('https://reqres.in/api/users', { name, job }));
       return true;
     } catch (error) {
       console.log(error);
@@ -50,6 +54,16 @@ export class AppService {
     } catch (error) {
       console.log(error);
       return [];
+    }
+  }
+
+  async updateUser(id: number, name: string, job: string): Promise<boolean> {
+    try {
+      const httpResult = await firstValueFrom<IUpdatedUser>(this._http.put<IUpdatedUser>(`https://reqres.in/api/users/${id}`, { name, job }));
+      return true;
+    } catch (error) {
+      console.log(error);
+      return false;
     }
   }
 }
