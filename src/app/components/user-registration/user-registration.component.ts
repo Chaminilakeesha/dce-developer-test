@@ -8,6 +8,7 @@ import { AppService } from 'src/app/app.service';
 })
 export class UserRegistrationComponent {
   loading: boolean = false;
+
   constructor(private _appService: AppService) { }
 
   async register(name: string, job: string) {

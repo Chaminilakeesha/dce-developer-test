@@ -12,6 +12,7 @@ export class ListViewComponent implements OnInit {
   id: number = 0;
   loading: boolean = false;
   deleteResponse: boolean = false;
+
   constructor(private _appService: AppService) { }
 
   ngOnInit() {
@@ -25,6 +26,7 @@ export class ListViewComponent implements OnInit {
   getUserId(id: number) {
     this.id = id;
   }
+
   async deleteUser() {
     this.loading = true;
     const deleteResponse: boolean = await this._appService.deleteUser(this.id);

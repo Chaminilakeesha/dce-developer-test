@@ -1,12 +1,17 @@
 <div class="content">
-    <form class="form-signin">
-        <img class="mb-4" src="../assets/bootstrap-solid.svg" alt="" width="72" height="72" />
-        <h1 class="h3 mb-3 font-weight-normal">User Registration</h1>
-        <input type="text" id="inputEmail" class="form-control" placeholder="Name" required autofocus #name />
-        <input type="text" id="inputPassword" class="form-control" placeholder="Job" required #job />
+    <form class="form-register">
+        <img class="mb-4" src="../../../assets/user-icon.png" alt="" width="120" height="120">
+        <h1 class="h3 mb-4">User Registration</h1>
+        <div class="form-group">
+            <label for="inputName">Name</label>
+            <input type="text" id="inputName" class="form-control mb-4 mt-2" placeholder="Enter Name" required autofocus
+                #name>
+        </div>
+        <div class="form-group">
+            <label for="inputJob">Job</label>
+            <input type="text" id="inputJob" class="form-control mb-4 mt-2" placeholder="Enter Job" required #job>
+        </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="register(name.value, job.value)"
-            [disabled]="loading">
-            Register
-        </button>
+            [disabled]="loading">Register</button>
     </form>
 </div>

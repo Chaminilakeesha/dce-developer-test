@@ -10,6 +10,7 @@ import { AppService } from 'src/app/app.service';
 export class UpdateUserComponent implements OnInit {
   loading: boolean = false;
   id: number = 0;
+
   constructor(private _appService: AppService, private _route: ActivatedRoute) { }
 
   ngOnInit() {
