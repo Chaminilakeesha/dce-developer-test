@@ -7,7 +7,8 @@ import { UpdateUserComponent } from './components/update-user/update-user.compon
 const routes: Routes = [
   { path: 'register', component: UserRegistrationComponent },
   { path: 'allusers', component: ListViewComponent },
-  { path: 'edituser/:id', component: UpdateUserComponent }
+  { path: 'edituser/:id', component: UpdateUserComponent },
+  { path: '**', redirectTo: 'allusers' }
 ];
 
 @NgModule({

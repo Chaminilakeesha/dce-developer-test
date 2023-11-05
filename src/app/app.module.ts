@@ -9,7 +9,6 @@ import { UserRegistrationComponent } from './components/user-registration/user-r
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ListViewComponent } from './components/list-view/list-view.component';
 import { UpdateUserComponent } from './components/update-user/update-user.component';
-import { DeleteUserComponent } from './components/delete-user/delete-user.component';
 
 @NgModule({
   declarations: [
@@ -17,8 +16,7 @@ import { DeleteUserComponent } from './components/delete-user/delete-user.compon
     UserRegistrationComponent,
     NavBarComponent,
     ListViewComponent,
-    UpdateUserComponent,
-    DeleteUserComponent
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,
