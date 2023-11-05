@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { AppService } from 'src/app/app.service';
 
 @Component({
@@ -16,5 +16,6 @@ export class UserRegistrationComponent {
     const registerResponse: boolean = await this._appService.registration(name, job);
     this.loading = false;
     registerResponse ? alert('Success') : alert('Failed');
+    return registerResponse;
   }
 }

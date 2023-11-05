@@ -9,7 +9,7 @@ import { AppService, IUser } from 'src/app/app.service';
 export class ListViewComponent implements OnInit {
   page: number = 1;
   userList: IUser[] = [];
-  id: number = 0;
+  selectedId: number = 0;
   loading: boolean = false;
   deleteResponse: boolean = false;
 
@@ -23,13 +23,13 @@ export class ListViewComponent implements OnInit {
     this._appService.viewAllUsers(page).then(value => this.userList = value);
   }
 
-  getUserId(id: number) {
-    this.id = id;
+  setUserId(id: number) {
+    this.selectedId = id;
   }
 
   async deleteUser() {
     this.loading = true;
-    const deleteResponse: boolean = await this._appService.deleteUser(this.id);
+    const deleteResponse: boolean = await this._appService.deleteUser(this.selectedId);
     this.loading = false;
     this.deleteResponse = deleteResponse;
   }

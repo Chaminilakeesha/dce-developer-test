@@ -1,16 +1,9 @@
 <div class="content">
     <form class="form-register">
-        <img class="mb-4" src="../../../assets/user-icon.png" alt="" width="120" height="120">
+        <img class="mb-4" src="../../../assets/user-icon.png" alt="register-user-icon" width="100" height="100">
         <h1 class="h3 mb-4">User Registration</h1>
-        <div class="form-group">
-            <label for="inputName">Name</label>
-            <input type="text" id="inputName" class="form-control mb-4 mt-2" placeholder="Enter Name" required autofocus
-                #name>
-        </div>
-        <div class="form-group">
-            <label for="inputJob">Job</label>
-            <input type="text" id="inputJob" class="form-control mb-4 mt-2" placeholder="Enter Job" required #job>
-        </div>
+        <input type="text" id="inputName" class="form-control mb-4 mt-2" placeholder="Enter Name" autofocus #name>
+        <input type="text" id="inputJob" class="form-control mb-4 mt-2" placeholder="Enter Job" #job>
         <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="register(name.value, job.value)"
             [disabled]="loading">Register</button>
     </form>
